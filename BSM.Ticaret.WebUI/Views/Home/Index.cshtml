@@ -1,0 +1,27 @@
+﻿@model List<UrunDto>
+@{
+    ViewData["Title"] = "Home Page";
+}
+
+<div class="text-center">
+    <h1 class="display-4">Welcome</h1>
+    <p>Learn about <a href="https://docs.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
+</div>
+
+<ul>
+    @foreach (var item in Model)
+    {
+        <li>
+            @item.Ad - Fiyat: @item.Fiyat
+            <div>
+                @foreach (var kategoriItem in item.KategoriList)
+                {
+                    <span> @kategoriItem.Ad ;</span>
+                }
+            </div>
+            <a asp-action="Ekle" asp-controller="Home" asp-route-id="@item.Id">Sepete Ekle</a>
+        </li>
+
+    }
+
+</ul>

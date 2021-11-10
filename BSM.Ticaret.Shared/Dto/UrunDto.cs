@@ -1,0 +1,14 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Text;
+
+namespace BSM.Ticaret.Shared.Dto
+{
+    public class UrunDto
+    {
+        public int Id { get; set; }
+        public string Ad { get; set; }
+        public double Fiyat { get; set; }
+        public IEnumerable<KategoriDto> KategoriList { get; set; }
+    }
+}
